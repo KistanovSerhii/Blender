@@ -1,0 +1,11 @@
+import bpy
+import math
+import mathutils
+ 
+cube = bpy.data.objects.get("Cube")
+
+for i in range(100):
+    for j in range(100):
+        cube_new = bpy.data.objects.new('Cube', cube.data)
+        cube_new.location = (j*2, i*2, 0)
+        bpy.data.collections["Collection"].objects.link(cube_new)
